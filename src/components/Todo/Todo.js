@@ -19,7 +19,6 @@ class Todo extends Component {
   }
 
   render() {
-    console.log(this.props.TodoStore);
     return (
       <div>
         <Card {...utils.card}>
