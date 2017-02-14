@@ -11,8 +11,8 @@ class Home extends Component {
     return (
       <div>
         <AppBar title="Strider TODO" showMenuIconButton={false}/>
-        <Input />
-        <Todo />
+        <Input {...this.props} />
+        <Todo {...this.props} />
       </div>
     )
   }

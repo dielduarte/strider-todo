@@ -2,10 +2,7 @@ import React, {Component} from 'react';
 import { Card } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import { utils } from '../../assets/glamor/utils';
-import { observer, inject } from 'mobx-react';
 
-@inject('TodoStore')
-@observer
 class Input extends Component {
 
   constructor(props) {

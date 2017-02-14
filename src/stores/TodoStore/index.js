@@ -12,7 +12,7 @@ class observableTodoStore {
       return this.todos.filter(
         todo =>  todo.completed === true
       );
-    } else {
+    } else if (this.filter === 'pending') {
       return this.todos.filter(
         todo =>  todo.completed === false
       );

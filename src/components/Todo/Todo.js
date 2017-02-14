@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { Card } from 'material-ui/Card';
 import { utils } from '../../assets/glamor/utils';
 import { List } from 'material-ui/List';
 import TodoItem from './TodoItem';
 import {Tabs, Tab} from 'material-ui/Tabs';
 
-@inject('TodoStore')
 @observer
 class Todo extends Component {
   constructor(props) {
@@ -19,8 +18,10 @@ class Todo extends Component {
   }
 
   render() {
+    console.log(this.props.TodoStore.allTodos);
     return (
       <div>
+      {this.props.TodoStore.filter}
         <Card {...utils.card}>
           <Tabs>
              <Tab label="Todos" onClick={() => this.setFilter('all')}></Tab>
@@ -32,7 +33,8 @@ class Todo extends Component {
               this.props.TodoStore.allTodos.map(
                 (todo, idx) => <TodoItem key={idx}
                                          index={idx}
-                                         todo={todo}></TodoItem>
+                                         todo={todo}
+                                         {...this.props}></TodoItem>
               )
             }
           </List>

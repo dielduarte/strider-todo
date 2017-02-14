@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { ListItem } from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 
-@inject('TodoStore')
 @observer
 class TodoItem extends Component {
   constructor(props){
@@ -17,8 +16,8 @@ class TodoItem extends Component {
   }
 
   handleCheck() {
-    const index = this.state.index;
-    this.props.TodoStore.toggleCompleted(index);
+    const INDEX = this.state.index;
+    this.props.TodoStore.toggleCompleted(INDEX);
   }
 
   render() {
