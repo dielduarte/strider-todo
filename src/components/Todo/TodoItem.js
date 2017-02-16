@@ -8,20 +8,15 @@ class TodoItem extends Component {
   constructor(props){
     super(props);
     this.handleCheck = this.handleCheck.bind(this);
-
-    this.state = {
-      todo: this.props.todo,
-      index: this.props.index
-    };
   }
 
   handleCheck() {
-    const INDEX = this.state.index;
+    const INDEX = this.props.index;
     this.props.TodoStore.toggleCompleted(INDEX);
   }
 
   render() {
-    const todo = this.state.todo;
+    const todo = this.props.todo;
 
     return (
       <div>

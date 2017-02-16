@@ -6,17 +6,17 @@ class observableTodoStore {
   @observable filter = 'all';
 
 	@computed get allTodos() {
-    if(this.filter === 'all') {
-      return this.todos;
-    } else if (this.filter === 'completed') {
-      return this.todos.filter(
-        todo =>  todo.completed === true
-      );
-    } else if (this.filter === 'pending') {
-      return this.todos.filter(
-        todo =>  todo.completed === false
-      );
-    }
+		if(this.filter === 'pending') {
+			return this.todos.filter(
+				todo =>  todo.completed === false
+			);
+		} else if (this.filter === 'completed') {
+			return this.todos.filter(
+				todo =>  todo.completed === true
+			);
+		} else {
+			return this.todos;
+		}
   }
 
 

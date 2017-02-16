@@ -18,10 +18,10 @@ class Todo extends Component {
   }
 
   render() {
-    console.log(this.props.TodoStore.allTodos);
+    const todos = this.props.TodoStore.allTodos;
+    
     return (
       <div>
-      {this.props.TodoStore.filter}
         <Card {...utils.card}>
           <Tabs>
              <Tab label="Todos" onClick={() => this.setFilter('all')}></Tab>
@@ -30,7 +30,7 @@ class Todo extends Component {
           </Tabs>
           <List>
             {
-              this.props.TodoStore.allTodos.map(
+              todos.map(
                 (todo, idx) => <TodoItem key={idx}
                                          index={idx}
                                          todo={todo}
